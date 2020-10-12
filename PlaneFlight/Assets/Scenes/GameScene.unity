@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8e01c2acec77e4db8bfb1a3ef6050a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: 0, y: 0, z: 100}
+  startPoint: {x: 0, y: 0, z: 150}
   spawnedObjectsSpeed: {fileID: 11400000, guid: 0bf0310a4fcc0194e8a3d9a33ac1a45c,
     type: 2}
   obstacles: {fileID: 11400000, guid: f02933f1f41debd44b3aff7e6ed17103, type: 2}
@@ -977,7 +977,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50a5a3a5109036c4ea621a24199160b8, type: 2}
+  - {fileID: 2100000, guid: adf64b937fcfb2443a1cc25eef34c98a, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1017,10 +1017,10 @@ ParticleSystemRenderer:
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: -6488710061278510923, guid: 102538909b963db478ee3556748fd369, type: 3}
-  m_Mesh1: {fileID: -7321579483082349865, guid: 102538909b963db478ee3556748fd369,
+  m_Mesh: {fileID: -2237852143325260857, guid: b4aa96d4d7fab35458900dc389b62f16, type: 3}
+  m_Mesh1: {fileID: 4038436009513190648, guid: b4aa96d4d7fab35458900dc389b62f16, type: 3}
+  m_Mesh2: {fileID: -7536155362762053254, guid: b4aa96d4d7fab35458900dc389b62f16,
     type: 3}
-  m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
 --- !u!198 &1379672960
@@ -1275,8 +1275,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 16
-      minScalar: 15
+      scalar: 55
+      minScalar: 45
       maxCurve:
         serializedVersion: 2
         m_Curve:

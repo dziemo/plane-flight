@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2da7cdcd7e29304e91e48d01fb20d6f, type: 3}
   m_Name: SpawnedObjectsSpeed
   m_EditorClassIdentifier: 
-  InitialValue: 20
-  RuntimeValue: 20
+  InitialValue: 50
+  RuntimeValue: 50
