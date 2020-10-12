@@ -16,6 +16,6 @@ public class GameController : MonoBehaviour
 
     public void OnEndGame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("UtilityScene");
     }
 }
