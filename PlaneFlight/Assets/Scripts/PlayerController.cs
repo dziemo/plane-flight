@@ -6,6 +6,7 @@ using ScriptableObjectArchitecture;
 public class PlayerController : MonoBehaviour
 {
     public FloatRuntimeVariable playerSpeed;
+    public GameEvent endGame;
 
     public float zTurnTilt = 15;
     public float turnSpeed = 2f;
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
             Move();
         } else
         {
-            transform.position = Vector3.Slerp(transform.position, newPos, playerSpeed.RuntimeValue/4 * Time.deltaTime);
+            transform.position = Vector3.Slerp(transform.position, newPos, 2f * Time.deltaTime);
         }
     }
 
@@ -69,7 +70,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            //End game
+            endGame.Raise();
+            OnEndGame();
         }
     }
 

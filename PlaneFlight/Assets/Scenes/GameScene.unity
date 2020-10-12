@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: {fileID: 11400000, guid: 5164b42c852fd5045bc44a240b3a799d, type: 2}
+  endGame: {fileID: 11400000, guid: d4e00ac4dde775d4da16f01ec19545bd, type: 2}
   zTurnTilt: 15
   turnSpeed: 30
   ringRadius: {fileID: 11400000, guid: 29b19fed66550114a8455d455a901014, type: 2}
@@ -465,6 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814776294}
   - component: {fileID: 814776295}
+  - component: {fileID: 814776296}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -502,6 +504,38 @@ MonoBehaviour:
   spawnedObjectsSpeed: {fileID: 11400000, guid: 0bf0310a4fcc0194e8a3d9a33ac1a45c,
     type: 2}
   obstacles: {fileID: 11400000, guid: f02933f1f41debd44b3aff7e6ed17103, type: 2}
+--- !u!114 &814776296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814776293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: d4e00ac4dde775d4da16f01ec19545bd,
+    type: 2}
+  _event: {fileID: 11400000, guid: d4e00ac4dde775d4da16f01ec19545bd, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 814776295}
+        m_MethodName: OnEndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &854554385
 GameObject:
   m_ObjectHideFlags: 0
@@ -5705,6 +5739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402944949}
   - component: {fileID: 1402944950}
+  - component: {fileID: 1402944951}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -5740,6 +5775,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceMultiplier: 2
   distance: {fileID: 11400000, guid: d3fd9e9a96e116f4ca1557c2485a3049, type: 2}
+--- !u!114 &1402944951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402944948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: d4e00ac4dde775d4da16f01ec19545bd,
+    type: 2}
+  _event: {fileID: 11400000, guid: d4e00ac4dde775d4da16f01ec19545bd, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1402944950}
+        m_MethodName: OnEndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1622477691
 GameObject:
   m_ObjectHideFlags: 0
