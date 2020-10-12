@@ -8,14 +8,20 @@ public class GameController : MonoBehaviour
     public float distanceMultiplier = 2f;
     
     public FloatRuntimeVariable distance;
-    
+
+    bool gameInProgress = true;
+
     private void Update()
     {
-        distance.RuntimeValue += Time.deltaTime * distanceMultiplier;
+        if (gameInProgress)
+        {
+            distance.RuntimeValue += Time.deltaTime * distanceMultiplier;
+        }
     }
 
     public void OnEndGame ()
     {
+        gameInProgress = false;
         SceneManager.LoadScene("UtilityScene");
     }
 }

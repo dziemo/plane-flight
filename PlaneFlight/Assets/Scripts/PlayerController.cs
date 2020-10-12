@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ScriptableObjectArchitecture;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
+    public FloatVariable ringRadius;
     public FloatRuntimeVariable playerSpeed;
     public GameEvent endGame;
 
@@ -13,9 +15,7 @@ public class PlayerController : MonoBehaviour
 
     Camera cam;
     Vector3 newPos;
-
-    public FloatVariable ringRadius;
-
+    
     bool alive;
 
     private void Start()
@@ -31,9 +31,6 @@ public class PlayerController : MonoBehaviour
         if (alive)
         {
             Move();
-        } else
-        {
-            transform.position = Vector3.Slerp(transform.position, newPos, 2f * Time.deltaTime);
         }
     }
 
@@ -47,7 +44,7 @@ public class PlayerController : MonoBehaviour
             newPos = mousePos.normalized * ringRadius.Value;
         }
 
-        if (newPos != Vector3.zero && newPos != transform.position)
+        if (newPos != Vector3.zero && Vector3.Distance(newPos, transform.position) > 0.25f)
         {
             transform.position = Vector3.Slerp(transform.position, newPos, playerSpeed.RuntimeValue * Time.deltaTime);
 
@@ -55,14 +52,16 @@ public class PlayerController : MonoBehaviour
 
             if (xDiff < 0)
             {
-                transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.Euler(0, 0, zTurnTilt), turnSpeed * Time.deltaTime);
-            } else if (xDiff > 0)
-            {
-                transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.Euler(0, 0, -zTurnTilt), turnSpeed * Time.deltaTime);
+                transform.DORotate(new Vector3(0, 0, zTurnTilt), 2f);
             }
-        } else
+            else if (xDiff > 0)
+            {
+                transform.DORotate(new Vector3(0, 0, -zTurnTilt), 2f);
+            }
+        }
+        else
         {
-            transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.identity, turnSpeed * Time.deltaTime);
+            transform.DORotate(Vector3.zero, 1f);
         }
     }
 
@@ -78,6 +77,5 @@ public class PlayerController : MonoBehaviour
     public void OnEndGame()
     {
         alive = false;
-        newPos = new Vector3(0, -10, 5);
     }
 }
