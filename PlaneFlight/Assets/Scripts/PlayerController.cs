@@ -65,6 +65,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            //End game
+        }
+    }
+
     public void OnEndGame()
     {
         alive = false;
