@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
 
     void Move ()
     {
+#if UNITY_EDITOR
+        
+#endif
         if (Input.touchCount > 0)
         {
             Vector3 mousePosRaw = Input.GetTouch(0).position;
